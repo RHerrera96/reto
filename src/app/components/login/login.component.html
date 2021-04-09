@@ -1,0 +1,22 @@
+<div class="row container">
+    <div class="col-lg-6 offset-3">
+        <div class="card mt-5">
+            <div class="card-body text-center">
+                <h3>Inicie sesión con su usuario</h3>
+                <form class="text-left" [formGroup]="formulario" (ngSubmit)="iniciarSesion()">
+                    <div class="mt-4">
+                        <input type="text" class="form-control formcontrol-lg" placeholder="Usuario" formControlName="usuario">
+                        <label *ngIf="bandera && this.formulario.value.usuario == ''" class="text-danger">Campo obligatorio</label>
+                    </div>
+                    <div class="mt-4">
+                        <input type="password" class="form-control formcontrol-lg" placeholder="Contraseña" formControlName="contrasena">
+                        <label *ngIf="bandera && this.formulario.value.contrasena ==''" class="text-danger">Campo obligatorio</label>
+                    </div>
+                    <div class="mt-4">
+                        <button class="btn btn-success btn-large" type="submit">Login</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
